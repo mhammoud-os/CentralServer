@@ -6,7 +6,7 @@
       $data = file_get_contents($_FILES['image']['tmp_name']);
       // connect to the database
       require_once('common.php');
-      $db = connectToDB();
+      //$db = connectToDB();
       //runSimpleQuery($db,"INSERT INTO images (name, data) VALUES ('$name','$data');");
       $pdo = new PDO('mysql:host=localhost;dbname=main', 'user', 'password');
       // insert the image data into the database
@@ -15,5 +15,7 @@
       //$stmt->bindParam(2, $type);
       $stmt->bindParam(2, $data);
       $stmt->execute();
+      //header("refresh:0;url=https://centraltechtribe.website");
    }
+
 ?>
